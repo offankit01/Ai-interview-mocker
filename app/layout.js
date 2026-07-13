@@ -1,5 +1,6 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata = {
   title: "AI Interview Mocker",
@@ -10,7 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
     <html lang="en">
-      <body>{children}</body>
+      <body>{children}
+        <Toaster />
+      </body>
     </html>
     </ClerkProvider>
   );
