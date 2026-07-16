@@ -43,7 +43,8 @@ function StartInterview({ params }) {
     console.log("Parsed Response:", jsonMockResp);
     console.log("Is Array:", Array.isArray(jsonMockResp));
 
-    setMockInterviewQuestion(jsonMockResp);
+    const questions = Array.isArray(jsonMockResp) ? jsonMockResp : Object.values(jsonMockResp);
+    setMockInterviewQuestion(questions);
     setInterviewData(result[0]);
     }
   };
