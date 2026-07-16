@@ -5,10 +5,16 @@ import { MockInterview } from "@/utils/schema";
 import { eq } from "drizzle-orm";
 import React, { useEffect, use, useState } from "react";
 import QuestionsSection from "./_components/QuestionsSection";
-import RecordAnswerSection from "./_components/RecordAnswerSection";
+// import RecordAnswerSection from "./_components/RecordAnswerSection";
 // import { Button } from "@base-ui/react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import dynamic from 'next/dynamic'
+
+const RecordAnswerSection = dynamic(
+  () => import('./_components/RecordAnswerSection'),
+  { ssr: false }
+)
 
 function StartInterview({ params }) {
   const { interviewid } = use(params);
